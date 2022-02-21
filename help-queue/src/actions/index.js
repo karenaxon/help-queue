@@ -9,9 +9,15 @@ export const toggleForm = () => ({
   type: c.TOGGLE_FORM
 });
 
+export const updateTime = (id, formattedWaitTime) => ({
+  type: c.UPDATE_TIME,
+  id: id,
+  formattedWaitTime: formattedWaitTime
+});
+
 export const addTicket = (ticket) => {
-  const { names, location, issue, id, formattedWaitTime, timeOpen } = ticket;
-  return {
+  const {names, location, issue, id, formattedWaitTime, timeOpen} = ticket;
+  return{
     type: c.ADD_TICKET,
     names: names,
     location: location,
@@ -21,9 +27,3 @@ export const addTicket = (ticket) => {
     timeOpen: timeOpen
   }
 }
-
-export const updateTime = (id, formattedWaitTime) => ({
-  type: c.UPDATE_TIME,
-  id: id,
-  formattedWaitTime: formattedWaitTime
-});
